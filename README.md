@@ -1,119 +1,78 @@
 # 🔥 IGNIS AI
 
-### Intelligent Industrial Fire & Thermal Source Classifier
+## Intelligent Industrial Fire & Thermal Source Classifier
 
 <p align="center">
-  <strong>AI-powered thermal anomaly detection, classification and risk prioritization system</strong>
+
+<strong>
+AI-powered thermal anomaly classification, risk prioritization and GIS visualization platform
+</strong>
+
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/AI-Thermal%20Intelligence-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python" />
-  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi" />
-  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Leaflet-GIS-199900?style=for-the-badge&logo=leaflet" />
+
+<img src="https://img.shields.io/badge/AI-Thermal%20Intelligence-orange?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
+
+<img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi">
+
+<img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react">
+
+<img src="https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/GIS-Leaflet-199900?style=for-the-badge&logo=leaflet">
+
 </p>
 
 ---
 
-## 🌋 Overview
+# 📌 Overview
 
-**IGNIS AI** is an intelligent thermal anomaly classification and industrial fire monitoring platform designed to identify, classify and prioritize thermal hotspots.
+**IGNIS AI** is an intelligent thermal anomaly classification platform designed to analyze, classify and prioritize thermal hotspots.
 
-The system combines:
+The system combines Machine Learning, thermal hotspot features, GIS visualization and risk analysis to help distinguish different types of thermal sources.
 
-- 🛰️ Satellite thermal hotspot data
-- 🤖 Machine Learning
-- 🗺️ GIS-based visualization
-- 📊 Risk and priority analysis
-- 🚨 Alert generation
-- 🔥 Industrial fire classification
+Instead of treating every thermal hotspot as an industrial fire, IGNIS AI analyzes multiple contextual features and predicts the probable source category.
 
-Instead of treating every thermal hotspot as a fire, IGNIS AI analyzes multiple contextual features to determine the **probable source of the thermal anomaly**.
-
----
-
-## 🎯 Problem
-
-Satellite-based thermal sensors can detect thousands of hotspots.
-
-However, a thermal hotspot does **not necessarily mean an industrial fire**.
-
-A detected hotspot could be:
+### Core Pipeline
 
 ```text
+Detect
+   ↓
+Analyze
+   ↓
+Classify
+   ↓
+Prioritize
+   ↓
+Visualize
+   ↓
+Alert
+🎯 Problem Statement
+
+Satellite-based thermal sensors can detect a large number of thermal anomalies.
+
+However, a thermal hotspot does not necessarily represent an industrial fire.
+
+A hotspot may originate from:
+
 🔥 Industrial Fire
-🔥 Wildfire
-🔥 Gas Flare
-🌾 Agricultural Burn
+🟠 Gas Flare
+🟢 Wildfire
+🟡 Agricultural Burn
 🔵 Persistent Thermal Source
 
-Manually analyzing these hotspots can be slow and difficult, especially when large geographic regions are involved.
+Manually examining large numbers of hotspots can be time-consuming and difficult.
 
-IGNIS AI aims to solve this problem by:
+IGNIS AI aims to provide an intelligent system that can automatically analyze these thermal anomalies and prioritize potentially important detections.
 
-Detect → Analyze → Classify → Prioritize → Visualize → Alert
+💡 Proposed Solution
 
-🚀 Key Features
-🤖 AI-Based Classification
+IGNIS AI uses a Machine Learning pipeline to classify thermal hotspots using multiple features.
 
-IGNIS AI uses a Random Forest Machine Learning model to classify detected thermal anomalies.
-
-Current classification categories:
-
-Classification	Description
-🔥 Industrial Fire	Thermal anomaly potentially associated with industrial activity
-🟠 Gas Flare	Thermal source associated with gas/flaring activity
-🟢 Wildfire	Thermal anomaly potentially caused by vegetation/fire
-🟡 Agricultural Burn	Thermal source associated with agricultural burning
-🔵 Persistent Source	Repeated thermal source detected over time
-🗺️ Interactive GIS Map
-
-The frontend provides an interactive map for visualizing thermal hotspots.
-
-Each hotspot is represented using a classification-specific marker.
-
-The map provides:
-
-📍 Geographic location
-🔥 Source classification
-📊 Thermal intensity
-🏭 Distance from industrial areas
-⏱️ Persistence information
-🚨 Priority level
-📊 Real-Time Dashboard
-
-The dashboard provides a quick overview of the detected thermal environment.
-
-Current dashboard statistics
-Total Hotspots
-       ↓
-Critical Hotspots
-       ↓
-Industrial Fires
-       ↓
-Wildfires
-
-This allows users to understand the situation without manually inspecting every hotspot.
-
-🚨 Risk & Priority Scoring
-
-IGNIS AI calculates a priority score for every detected hotspot.
-
-The system considers factors such as:
-
-🔥 Fire Radiative Power (FRP)
-🌡️ Brightness
-🏭 Distance from industrial locations
-⏱️ Persistence
-🤖 ML classification
-
-Higher-risk detections receive higher priority.
-
-🧠 Machine Learning Pipeline
-
-The current ML pipeline follows:
+The current prototype uses a Random Forest classifier along with feature engineering and contextual information.
 
 Thermal Hotspot
        │
@@ -133,66 +92,186 @@ Random Forest Classifier
 Source Classification
        │
        ▼
-Confidence Score
+Confidence
        │
        ▼
-Priority Calculation
+Priority Score
        │
        ▼
-Alert / Visualization
-🧬 Features Used
+GIS Dashboard
+       │
+       ▼
+Alert Prioritization
+🚀 Key Features
+🤖 1. AI-Based Thermal Classification
 
-The classifier currently uses the following features:
+The system classifies thermal anomalies into multiple source categories.
 
-Feature	Purpose
-frp	Indicates thermal energy intensity
-brightness	Represents thermal brightness
-land_cover	Provides environmental context
-distance_industry	Measures proximity to industrial locations
-persistence	Indicates repeated thermal activity
+Category	Description
+🔥 Industrial Fire	Thermal anomaly potentially associated with industrial activity
+🟠 Gas Flare	Thermal source potentially associated with flaring activity
+🟢 Wildfire	Thermal anomaly potentially associated with vegetation or wildfire
+🟡 Agricultural Burn	Thermal source potentially associated with agricultural burning
+🔵 Persistent Source	Repeated thermal activity detected over time
+🗺️ 2. Interactive GIS Map
+
+IGNIS AI provides a map-based visualization of thermal hotspots.
+
+Each hotspot is displayed according to its predicted classification.
+
+The map provides information such as:
+
+📍 Geographic location
+🔥 Source classification
+📊 Thermal intensity
+🏭 Distance from industrial locations
+⏱️ Persistence
+🚨 Priority level
+📊 3. Interactive Dashboard
+
+The dashboard provides a centralized view of thermal anomaly detections.
+
+Dashboard Metrics
+┌──────────────────────┐
+│    TOTAL HOTSPOTS    │
+└──────────────────────┘
+
+┌──────────────────────┐
+│       CRITICAL       │
+└──────────────────────┘
+
+┌──────────────────────┐
+│   INDUSTRIAL FIRES   │
+└──────────────────────┘
+
+┌──────────────────────┐
+│      WILDFIRES       │
+└──────────────────────┘
+
+Users can also filter hotspots based on their classification.
+
+🚨 4. Risk & Priority Analysis
+
+IGNIS AI calculates a priority level for thermal anomalies using multiple factors.
+
+The current analysis considers:
+
+🔥 Fire Radiative Power (FRP)
+🌡️ Brightness
+🏭 Distance from industrial locations
+⏱️ Persistence
+🤖 ML classification
+
+Conceptually:
+
+High FRP
+   +
+High Brightness
+   +
+Near Industrial Area
+   +
+High Persistence
+   +
+Industrial Fire Classification
+          │
+          ▼
+    HIGH PRIORITY
+          │
+          ▼
+       🚨 ALERT
+🧠 Machine Learning
+Random Forest Classifier
+
+The current prototype uses a Random Forest machine learning model.
+
+The classifier analyzes thermal and contextual features to predict the most probable thermal source category.
+
+Input Features
+Feature	Description
+frp	Fire Radiative Power / thermal energy intensity
+brightness	Thermal brightness measurement
+land_cover	Environmental or land-cover context
+distance_industry	Distance from nearby industrial areas
+persistence	Repeated thermal activity
+🧬 ML Pipeline
+                 ┌───────────────────────┐
+                 │   Thermal Hotspot     │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │  Feature Extraction   │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │   Random Forest ML    │
+                 │       Classifier      │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │ Source Classification │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │ Confidence / Result   │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │  Priority Calculation │
+                 └───────────┬───────────┘
+                             │
+                             ▼
+                 ┌───────────────────────┐
+                 │ GIS Dashboard / Alert │
+                 └───────────────────────┘
 🏗️ System Architecture
-                 ┌──────────────────────┐
-                 │   Satellite Data     │
-                 │   / Thermal Sources  │
-                 └──────────┬───────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │ Feature Engineering  │
-                 └──────────┬───────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │   Random Forest ML   │
-                 │      Classifier      │
-                 └──────────┬───────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │ Classification +    │
-                 │ Confidence + Risk    │
-                 └──────────┬───────────┘
-                            │
-                            ▼
-        ┌────────────────────────────────────┐
-        │             FastAPI                │
-        │              Backend               │
-        └────────────────┬───────────────────┘
-                         │
-                         │ REST API
-                         ▼
-        ┌────────────────────────────────────┐
-        │             React UI               │
-        │                                    │
-        │  Dashboard + Map + Alerts + Stats │
-        └────────────────────────────────────┘
+                  ┌──────────────────────┐
+                  │   Thermal Hotspot    │
+                  │        Data          │
+                  └──────────┬───────────┘
+                             │
+                             ▼
+                  ┌──────────────────────┐
+                  │ Feature Engineering  │
+                  └──────────┬───────────┘
+                             │
+                             ▼
+                  ┌──────────────────────┐
+                  │ Random Forest Model  │
+                  └──────────┬───────────┘
+                             │
+                             ▼
+                  ┌──────────────────────┐
+                  │ Classification +     │
+                  │ Priority Analysis    │
+                  └──────────┬───────────┘
+                             │
+                             ▼
+                  ┌──────────────────────┐
+                  │       FastAPI        │
+                  │       Backend        │
+                  └──────────┬───────────┘
+                             │
+                        REST API
+                             │
+                             ▼
+                  ┌──────────────────────┐
+                  │      React UI        │
+                  │                      │
+                  │ Dashboard + Map +    │
+                  │ Alerts + Statistics  │
+                  └──────────────────────┘
 🛠️ Technology Stack
 Frontend
 ⚛️ React
 ⚡ Vite
 🗺️ React Leaflet
-🎨 CSS
 📡 Axios
+🎨 CSS
 🎯 Lucide React
 Backend
 🐍 Python
@@ -202,32 +281,37 @@ Backend
 🔢 NumPy
 🤖 Scikit-learn
 💾 Joblib
-GIS / Geospatial
+Geospatial
 🗺️ Leaflet
 🌍 GeoPandas
 📐 Shapely
-🛰️ Satellite thermal data integration
 Machine Learning
 Random Forest
 One-Hot Encoding
 Feature Engineering
 Classification
-Confidence estimation
-Priority scoring
+Confidence Estimation
+Priority Scoring
 📁 Project Structure
 SIH/
 │
 ├── backend/
+│   │
 │   ├── main.py
 │   ├── ml_model.py
 │   └── requirements.txt
 │
 ├── IGNIS-AI/
+│   │
 │   └── IGNIS-AI/
+│       │
 │       └── frontend/
+│           │
 │           ├── public/
+│           │
 │           ├── src/
 │           │   ├── assets/
+│           │   │
 │           │   ├── components/
 │           │   │   ├── AlertPanel.jsx
 │           │   │   ├── HotspotDetails.jsx
@@ -246,8 +330,8 @@ SIH/
 │           └── index.html
 │
 └── README.md
-⚙️ Installation
-1️⃣ Clone the Repository
+⚙️ Installation & Setup
+1. Clone Repository
 git clone https://github.com/mayank-1107/IGNIS-AI.git
 cd IGNIS-AI
 🐍 Backend Setup
@@ -256,12 +340,11 @@ Navigate to the backend:
 
 cd backend
 
-Create a virtual environment:
+Create a Python virtual environment:
 
-Windows
 python -m venv venv
 
-Activate it:
+Activate the environment:
 
 venv\Scripts\activate
 
@@ -274,12 +357,11 @@ Start the FastAPI server:
 
 uvicorn main:app --reload
 
-Backend will be available at:
+The backend will run at:
 
 http://127.0.0.1:8000
-API Status
 
-Open:
+Check the API status:
 
 http://127.0.0.1:8000/
 
@@ -291,9 +373,9 @@ Expected response:
 }
 ⚛️ Frontend Setup
 
-Open another terminal.
+Open a second terminal.
 
-Navigate to:
+Navigate to the frontend:
 
 cd IGNIS-AI\IGNIS-AI\frontend
 
@@ -305,23 +387,23 @@ Start the development server:
 
 npm run dev
 
-The frontend will normally be available at:
+Vite will display the local frontend URL in the terminal.
+
+For example:
 
 http://localhost:5173
 
-Vite may automatically select another available port if 5173 is already occupied.
+If port 5173 is already occupied, Vite may automatically select another available port.
 
 🔌 API Endpoints
 Method	Endpoint	Description
 GET	/	Check system status
-GET	/api/hotspots	Get all detected hotspots
-GET	/api/hotspots/{id}	Get a specific hotspot
-GET	/api/stats	Get dashboard statistics
+GET	/api/hotspots	Retrieve thermal hotspots
+GET	/api/hotspots/{id}	Retrieve a specific hotspot
+GET	/api/stats	Retrieve dashboard statistics
 POST	/api/classify	Classify a thermal hotspot
-📡 Example Hotspot
-
-Example input:
-
+📡 Example Classification
+Example Input
 {
   "frp": 75,
   "brightness": 340,
@@ -329,46 +411,23 @@ Example input:
   "distance_industry": 2.5,
   "persistence": 4
 }
-
-Possible output:
-
+Example Output
 {
   "classification": "industrial_fire",
   "confidence": 0.91,
   "priority": "CRITICAL"
 }
-🚨 Alert Logic
 
-IGNIS AI prioritizes thermal anomalies based on their characteristics.
+The values above are illustrative example values. Actual predictions depend on the model and supplied input features.
 
-Conceptually:
+🖥️ Dashboard Components
+🔥 Hotspot Monitoring
 
-High FRP
-   +
-High Brightness
-   +
-Near Industrial Area
-   +
-High Persistence
-   +
-Industrial Fire Classification
-          │
-          ▼
-     HIGH PRIORITY
-          │
-          ▼
-      🚨 ALERT
-🖥️ Dashboard
-
-The IGNIS AI dashboard provides:
-
-🔥 Thermal Hotspot Monitoring
-
-View detected hotspots directly on the map.
+Thermal hotspots are displayed directly on the interactive GIS map.
 
 📊 Statistics
 
-Monitor:
+The dashboard provides an overview of:
 
 Total hotspots
 Critical detections
@@ -376,7 +435,7 @@ Industrial fires
 Wildfires
 🎛️ Classification Filters
 
-Users can filter hotspots based on:
+Users can filter thermal anomalies by:
 
 Industrial Fire
 Gas Flare
@@ -385,7 +444,7 @@ Agricultural Burn
 Persistent Source
 📍 Hotspot Details
 
-Selecting a hotspot displays detailed information including:
+Selecting a hotspot provides detailed information such as:
 
 Classification
 Confidence
@@ -395,30 +454,63 @@ Industry Distance
 Persistence
 Priority
 Risk Reasons
+🚨 Alert Prioritization
+
+The system identifies potentially important detections based on their calculated priority.
+
+                 Thermal Hotspot
+                        │
+                        ▼
+               Feature Analysis
+                        │
+                        ▼
+                ML Classification
+                        │
+                        ▼
+                Priority Scoring
+                        │
+              ┌─────────┴─────────┐
+              │                   │
+              ▼                   ▼
+        Normal Priority      High Priority
+                                  │
+                                  ▼
+                             🚨 Alert
 🌍 Future Scope
 
-IGNIS AI is designed to evolve into a complete large-scale thermal intelligence platform.
+The current prototype can be extended into a larger thermal intelligence platform.
 
 🛰️ 1. NASA FIRMS Integration
 
-Integrate live satellite thermal anomaly feeds for continuously updated hotspot detection.
+Integrate satellite thermal anomaly feeds to provide continuously updated hotspot data.
 
-🗺️ 2. Industrial Facility Database
+Satellite Data
+      ↓
+Thermal Hotspots
+      ↓
+IGNIS AI
+      ↓
+Classification
+      ↓
+Risk Analysis
+      ↓
+GIS Dashboard
+🏭 2. Industrial Facility Database
 
-Integrate industrial facility locations to improve contextual classification.
+Integrate industrial facility locations to improve contextual analysis and determine the proximity of thermal anomalies to industrial sites.
 
-🧠 3. Advanced ML Models
+🧠 3. Advanced Machine Learning
 
-Future versions can evaluate:
+Future versions can evaluate additional machine learning approaches such as:
 
 XGBoost
 LightGBM
 Neural Networks
 Spatio-temporal models
-Ensemble approaches
+Ensemble methods
 ⏳ 4. Temporal Persistence Tracking
 
-Track the same thermal source across multiple satellite observations.
+Track thermal activity across multiple observations to identify persistent thermal sources.
 
 Observation 1
       ↓
@@ -426,10 +518,10 @@ Observation 2
       ↓
 Observation 3
       ↓
-Persistent Thermal Source
+Persistent Source
 🚨 5. Automated Alerting
 
-Future alerts can be delivered through:
+Future versions can provide automated alerts through:
 
 Email
 SMS
@@ -437,19 +529,16 @@ Web notifications
 Emergency dashboards
 📱 6. Mobile Application
 
-A dedicated mobile interface can allow field teams to receive and investigate alerts.
+A mobile application could allow field teams to receive alerts and investigate high-priority thermal anomalies.
 
-🎯 Use Cases
-
-IGNIS AI can support:
-
+🎯 Potential Use Cases
 🏭 Industrial Safety
 
 Identify potentially hazardous thermal activity near industrial facilities.
 
-🌲 Forest & Wildfire Monitoring
+🌲 Wildfire Monitoring
 
-Detect and classify thermal anomalies associated with wildfires.
+Detect and classify thermal anomalies associated with wildfire activity.
 
 🌾 Agricultural Monitoring
 
@@ -461,84 +550,85 @@ Identify potential gas flare activity.
 
 🚨 Emergency Response
 
-Prioritize high-risk thermal anomalies for faster investigation.
+Prioritize high-risk thermal anomalies to support faster investigation and response.
 
 🛰️ Remote Sensing
 
-Transform satellite thermal observations into actionable intelligence.
+Convert thermal observations into actionable information through automated classification and visualization.
 
 📈 Project Vision
 
-IGNIS AI aims to move thermal monitoring from:
+IGNIS AI aims to transform thermal monitoring from:
 
-Raw Satellite Data
-        ↓
-     Human Analysis
-        ↓
-    Manual Decision
+Raw Thermal Data
+       ↓
+Manual Analysis
+       ↓
+Manual Decision
 
-to:
+into:
 
-Satellite Data
+Thermal Data
       ↓
-  AI Analysis
+AI Analysis
       ↓
- Classification
+Classification
       ↓
- Risk Scoring
+Risk Scoring
       ↓
-  GIS Mapping
+GIS Visualization
       ↓
- Smart Alerts
+Smart Alerts
       ↓
- Faster Response
-🔐 Security & Configuration
+Faster Response
+🔐 Security
 
-Sensitive credentials should never be committed to GitHub.
+Sensitive credentials must never be committed to GitHub.
 
-Use environment variables:
-
-.env
+Use environment variables for API keys and other secrets.
 
 Example:
 
 NASA_FIRMS_API_KEY=your_api_key
 
-Keep .env inside .gitignore.
+Store credentials in:
 
-Never expose API keys directly in source code.
+.env
+
+Make sure .env is included in .gitignore.
+
+Never place API keys directly inside source code.
 
 🧪 Development
-
-Backend:
-
+Start Backend
 cd backend
 venv\Scripts\activate
 uvicorn main:app --reload
+Start Frontend
 
-Frontend:
+Open another terminal:
 
 cd IGNIS-AI\IGNIS-AI\frontend
 npm run dev
-🤝 Contribution
+🤝 Contributing
 
-Contributions are welcome.
+Contributions and suggestions are welcome.
 
-Steps
-Fork the repository
-Create a feature branch
+Basic workflow
 git checkout -b feature/new-feature
-Make your changes
-Commit
+
+Make your changes and then:
+
 git add .
 git commit -m "Add new feature"
-Push
 git push origin feature/new-feature
-Create a Pull Request
-👨‍💻 Team
+
+Create a Pull Request on GitHub.
+
+👨‍💻 Project
 IGNIS AI
 
-Developed as an SIH prototype focused on AI-assisted thermal anomaly classification and industrial fire intelligence.
+Developed as a Smart India Hackathon (SIH) prototype focused on AI-assisted thermal anomaly classification, industrial fire intelligence and GIS-based visualization.
 
 📜 License
 
@@ -546,7 +636,7 @@ This project is intended for educational, research and prototype development pur
 
 ⭐ Support
 
-If you find this project useful:
+If you find IGNIS AI useful:
 
 ⭐ Star the repository
 
@@ -556,30 +646,5 @@ If you find this project useful:
 
 💡 Suggest improvements
 
-<p align="center">
 🔥 IGNIS AI
-
 See the heat. Understand the source. Prioritize the risk.
-
-</p> <p align="center"> <strong>🛰️ Detect • 🤖 Classify • 🗺️ Visualize • 🚨 Respond</strong> </p> ```
-🔥 Ek important kaam
-
-Tumhare backend me abhi requirements.txt shayad nahi hai. GitHub clone karne wale ko backend install karne ke liye ye file chahiye.
-
-backend folder ke andar requirements.txt banao:
-
-fastapi
-uvicorn
-pandas
-numpy
-scikit-learn
-joblib
-requests
-geopandas
-shapely
-
-Phir root SIH terminal me:
-
-git add .
-git commit -m "Add professional README"
-git push
